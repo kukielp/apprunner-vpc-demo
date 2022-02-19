@@ -43,6 +43,16 @@ except Exception as e:
     print('Database connection failed due to {}'.format(e))          
 
 def all_books(request):
+    print('About to create the connection A')  
+    mydb =  mysql.connector.connect(
+        host=DATABASE_HOST,
+        user=DATABASE_USER,
+        passwd=DATABASE_PASS,
+        port=DATABASE_PORT,
+        database=DATABASE_NAME,
+        ssl_ca=DATABASE_CERT
+    )
+    print('Connection created A') 
     mycursor = mydb.cursor()
     mycursor.execute('SELECT name, title, year FROM authors, books WHERE authors.authorId = books.authorId ORDER BY year')
     title = 'Books'
