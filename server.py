@@ -29,6 +29,7 @@ try:
     #    DBUsername=DATABASE_USER,
     #    Region=DATABASE_REGION
     #)
+    print('About to create the connection')  
     mydb =  mysql.connector.connect(
         host=DATABASE_HOST,
         user=DATABASE_USER,
@@ -37,6 +38,7 @@ try:
         database=DATABASE_NAME,
         ssl_ca=DATABASE_CERT
     )
+    print('Connection created')  
 except Exception as e:
     print('Database connection failed due to {}'.format(e))          
 
