@@ -55,7 +55,7 @@ def all_books(request):
     print('Connection created A') 
     mycursor = mydb.cursor()
     mycursor.execute('SELECT name, title, year FROM authors, books WHERE authors.authorId = books.authorId ORDER BY year')
-    title = 'Books'
+    title = 'Books - New Deployment'
     message = '<html><head><title>' + title + '</title></head><body>'
     message += '<h1>' + title + '</h1>'
     message += '<ul>'
